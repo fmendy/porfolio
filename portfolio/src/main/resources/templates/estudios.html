@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+<link rel="icon" type="image/x-icon" th:href="@{/img/favicon.png}">
+<script th:src="@{/js/bootstrap.bundle.min.js} "></script>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+<body>
+
+	<div th:replace="~{fragments/header :: header}"></div>
+
+	<div class="container">
+		<div class="main-timeline">
+
+			<div th:each="estudio, iStat : ${listEstudios}">
+
+				<!-- start experience section-->
+				<div th:if="${iStat.count % 2 !=0 }" class="timeline">
+					<div class="icon"></div>
+					<div class="date-content">
+						<div class="date-outer">
+							<span class="date"> <span class="month"
+								th:text="#{nivel.eqf.mec}" style="font-size: 16px"></span><br>
+								<span class="month" th:text="${estudio.nivelEqfMec}"></span>
+							</span>
+						</div>
+					</div>
+					<div class="timeline-content">
+						<h5 class="title" th:text="${estudio.nombre}"></h5>
+						<h5 class="title" th:text="${estudio.institucionEducativaNombre}"></h5>
+						<h6 th:text="${estudio.anoInicio}+' - '+${estudio.anoFin}"></h6>
+
+						<ul>
+
+							<li th:each="observacion : ${estudio.listEstudioObservacion}"
+								class="li-trabajo-tarea"><b th:text="${observacion.nombre}"></b>
+								<span th:text="${observacion.observacion}"></span></li>
+						</ul>
+					</div>
+				</div>
+				<!-- end experience section-->
+				<div style="color: white" th:text="${iStat.count % 2 ==0 }"></div>
+
+				<!-- start experience section-->
+				<div th:if="${iStat.count % 2 ==0 }" class="timeline">
+					<div class="icon"></div>
+					<div class="date-content">
+						<div class="date-outer">
+							<span class="date"> <span class="month"
+								th:text="#{nivel.eqf.mec}" style="font-size: 16px"></span><br>
+								<span class="month" th:text="${estudio.nivelEqfMec}"></span>
+							</span>
+						</div>
+					</div>
+					<div class="timeline-content">
+						<h5 class="title" th:text="${estudio.nombre}"></h5>
+						<h5 class="title" th:text="${estudio.institucionEducativaNombre}"></h5>
+						<h6 th:text="${estudio.anoInicio}+' - '+${estudio.anoFin}"></h6>
+
+						<ul>
+
+							<li th:each="observacion : ${estudio.listEstudioObservacion}"
+								class="li-trabajo-tarea"><b th:text="${observacion.nombre}"></b>
+								<span th:text="${observacion.observacion}"></span></li>
+						</ul>
+					</div>
+				</div>
+				<!-- end experience section-->
+			</div>
+		</div>
+	</div>
+
+	<section class="section gray-bg" id="resume"
+		style="background-image: url('/img/fondo_ciberseguridad.jpg')">
+
+	</section>
+
+	<i class="bi bi-list"></i>
+
+	<div th:replace="~{fragments/footer :: footer}"></div>
+
+
+</body>
+</html>

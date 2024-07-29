@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	<div th:fragment="footer">
+		<section class="">
+			<!-- Footer -->
+			<footer class="bg-body-tertiary text-center text-md-start">
+				<!-- Grid container -->
+				<div class="container p-4">
+					<!--Grid row-->
+					<div class="row">
+						<!--Grid column-->
+						<div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+							<h5 class="text-uppercase" th:text="#{gomez.floriano.jorge}"></h5>
+
+							<p th:text="#{senior.sysadmin}"></p>
+						</div>
+						<!--Grid column-->
+
+						<!--Grid column-->
+						<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+							<h5 class="text-uppercase" th:text="#{links}"></h5>
+
+							<ul class="list-unstyled mb-0">
+								<li><a href="/" class="text-body" th:text="#{inicio}"></a></li>
+								<li><a href="/experiencia" class="text-body"
+									th:text="#{experiencia}"></a></li>
+
+							</ul>
+						</div>
+						<!--Grid column-->
+
+						<!--Grid column-->
+						<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+							<h5 class="text-uppercase mb-0"></h5>
+
+							<ul class="list-unstyled">
+								<li><a href="/estudios" class="text-body"
+									th:text="#{estudios}"></a></li>
+								<li><a href="/cursos" class="text-body" th:text="#{cursos}"></a></li>
+								<li><a href="/certificaciones" class="text-body"
+									th:text="#{certificaciones}"></a></li>
+
+							</ul>
+						</div>
+						<!--Grid column-->
+					</div>
+					<!--Grid row-->
+				</div>
+				<!-- Grid container -->
+
+				<!-- Copyright -->
+				<div class="text-center p-3"
+					style="background-color: rgba(0, 0, 0, 0.05);">
+					© <span th:text="${anno}"></span> Copyright: <a class="text-body"
+						href="https://jagfloriano.com/" th:text="#{url.index}"></a>
+				</div>
+				<!-- Copyright -->
+			</footer>
+			<!-- Footer -->
+		</section>
+	</div>
+</body>
+</html>

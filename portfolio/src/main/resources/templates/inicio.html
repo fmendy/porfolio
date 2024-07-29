@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+<link rel="icon" type="image/x-icon" th:href="@{/img/favicon.png}">
+<script th:src="@{/js/bootstrap.bundle.min.js} "></script>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+<body>
+
+	<div th:replace="~{fragments/header :: header}"></div>
+
+	<!-- Header - set the background image for the header in the line below-->
+	<header class="py-5 bg-image-full"
+		style="background-image: url('/img/fondo_ciberseguridad.jpg')">
+		<div class="text-center my-5">
+			<img class="img-fluid rounded-circle mb-4" src="/img/floriano.jpg"
+				alt="Jorge Gómez Floriano" />
+			<h1 class="text-white fs-3 fw-bolder"
+				th:text="#{gomez.floriano.jorge}"></h1>
+			<p class="text-white-50 mb-0" th:text="#{senior.sysadmin}"></p>
+		</div>
+	</header>
+
+	<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

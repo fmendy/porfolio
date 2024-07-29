@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark"
+		th:fragment="header">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/"
+						th:style="${currentPage == 'inicio' ? 'color:white' : ''}"
+						th:text="#{inicio}"></a></li>
+					<li class="nav-item"><a class="nav-link" href="/experiencia"
+						th:style="${currentPage == 'experiencia' ? 'color:white' : ''}"
+						th:text="#{experiencia}"></a></li>
+					<li class="nav-item"><a class="nav-link" href="/estudios"
+						th:style="${currentPage == 'estudios' ? 'color:white' : ''}"
+						th:text="#{estudios}"></a></li>
+					<li class="nav-item"><a class="nav-link" href="/cursos"
+						th:style="${currentPage == 'cursos' ? 'color:white' : ''}"
+						th:text="#{cursos}"></a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:style="${currentPage == 'certificaciones' ? 'color:white' : ''}"
+						href="/certificaciones" th:text="#{certificaciones}"></a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+</body>
+</html>

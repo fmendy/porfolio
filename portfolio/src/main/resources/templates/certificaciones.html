@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+<link rel="icon" type="image/x-icon" th:href="@{/img/favicon.png}">
+<script th:src="@{/js/bootstrap.bundle.min.js} "></script>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/custom.css}">
+</head>
+<body>
+
+	<div th:replace="~{fragments/header :: header}"></div>
+
+	<section class="section gray-bg" id="resume"
+		style="background-image: url('/img/fondo_ciberseguridad.jpg')">
+		<div class="container">
+
+			<br>
+
+			<div class="row">
+				<div class="col-lg-12 m-15px-tb">
+					<div class="resume-box">
+						<div class=fakeMenu>
+							<div class="fakeButtons fakeClose"></div>
+							<div class="fakeButtons fakeMinimize"></div>
+							<div class="fakeButtons fakeZoom"></div>
+
+						</div>
+						<div class="fakeScreen">
+							<div class="resume-box">
+								<div th:each="certificacion, iStat : ${listCertificaciones}">
+									<span class="spanConsole">> <font class="text-light "
+										style="font-family: monospace"
+										th:text="${certificacion.nombre}"> </font>
+									</span> <br> <a th:if="${certificacion.url!=null}"
+										th:href="${certificacion.url}" style="text-decoration: none;"
+										target="_blank" rel='noreferrer'> <font
+										class="spanConsole text-light " style="font-family: monospace"
+										th:text="#{certification.id}+': '+${certificacion.certificateNumber}">
+									</font>
+									</a> <font th:if="${certificacion.url == null}"
+										class="spanConsole text-light " style="font-family: monospace"
+										th:text="#{certification.id}+': '+${certificacion.certificateNumber}">
+									</font>
+
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+
+
+
+		</div>
+	</section>
+
+	<i class="bi bi-list"></i>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+
+</body>
+</html>
