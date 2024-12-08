@@ -44,7 +44,7 @@ public class PrivadoUsuarioController {
 
 	private static final String VIEW_DETAILS = "usuario/details";
 
-	@GetMapping("")
+/*	@GetMapping("")
 	public ModelAndView displayAll(Pageable pageable, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView(VIEW_LIST);
 		defaultModel(mav, new UsuarioFilter(), pageable, request);
@@ -114,7 +114,7 @@ public class PrivadoUsuarioController {
 	private void defaultModelDetails(ModelAndView mav, UsuarioForm form) {
 		mav.addObject("form", form);
 		mav.addObject("listRol", rolService.getListForm());
-		mav.addObject("title", Utils.getMessage(TITLE_PAGE));
-	}
+		mav.addObject("title", Util.getMessage(TITLE_PAGE));
+	}*/
 
 }

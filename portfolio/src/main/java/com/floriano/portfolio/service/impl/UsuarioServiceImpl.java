@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.floriano.portfolio.repository.UsuarioRepository;
-import com.floriano.portfolio.entity.Usuario;
-import com.floriano.portfolio.model.UserSessionForm;
+import com.floriano.portfolio.dto.UserSessionForm;
+import com.floriano.portfolio.model.Usuario;
 import com.floriano.portfolio.service.UsuarioService;
 
 @Service

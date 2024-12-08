@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.floriano.portfolio.entity.Visita;
+import com.floriano.portfolio.model.Visita;
 
 @Repository
 public interface VisitaRepository  extends CrudRepository<Visita, Long>{

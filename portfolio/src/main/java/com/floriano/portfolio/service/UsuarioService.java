@@ -1,6 +1,6 @@
 package com.floriano.portfolio.service;
 
-import com.floriano.portfolio.entity.Usuario;
+import com.floriano.portfolio.model.Usuario;
 
 
 public interface UsuarioService {

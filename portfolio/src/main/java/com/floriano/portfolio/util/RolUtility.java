@@ -3,8 +3,8 @@ package com.floriano.portfolio.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.floriano.portfolio.entity.Rol;
-import com.floriano.portfolio.model.RolForm;
+import com.floriano.portfolio.dto.RolForm;
+import com.floriano.portfolio.model.Rol;
 
 import lombok.experimental.UtilityClass;
 

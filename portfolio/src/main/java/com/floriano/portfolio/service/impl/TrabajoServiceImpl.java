@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.floriano.portfolio.repository.TrabajoRepository;
-import com.floriano.portfolio.entity.Trabajo;
-import com.floriano.portfolio.model.publico.PublicTrabajoForm;
+import com.floriano.portfolio.dto.publico.PublicoTrabajoForm;
+import com.floriano.portfolio.model.Trabajo;
 import com.floriano.portfolio.service.TrabajoService;
-import com.floriano.portfolio.util.PublicTrabajoMapper;
+import com.floriano.portfolio.util.TrabajoUtil;
 
 @Service
 public class TrabajoServiceImpl implements TrabajoService {
@@ -23,8 +23,8 @@ public class TrabajoServiceImpl implements TrabajoService {
 	}
 
 	@Override
-	public List<PublicTrabajoForm> getPublicTrabajos() {
-		return PublicTrabajoMapper
+	public List<PublicoTrabajoForm> getPublicTrabajos() {
+		return TrabajoUtil
 				.listTrabajoToListPublicTrabajoForm(trabajoRepository.findByActivoTrueOrderByFechaInicioDesc());
 	}
 

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.floriano.portfolio.entity.Trabajo;
+import com.floriano.portfolio.model.Trabajo;
 
 @Repository
 public interface TrabajoRepository extends CrudRepository<Trabajo, Long> {

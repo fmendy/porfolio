@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.floriano.portfolio.repository.EstudioRepository;
-import com.floriano.portfolio.entity.Estudio;
-import com.floriano.portfolio.model.publico.PublicEstudioForm;
+import com.floriano.portfolio.dto.publico.PublicoEstudioForm;
+import com.floriano.portfolio.model.Estudio;
 import com.floriano.portfolio.service.EstudioService;
-import com.floriano.portfolio.util.EstudioMapper;
+import com.floriano.portfolio.util.EstudioUtil;
 
 @Service
 public class EstudioServiceImpl implements EstudioService {
@@ -23,8 +23,8 @@ public class EstudioServiceImpl implements EstudioService {
 	}
 
 	@Override
-	public List<PublicEstudioForm> getAllActivosPublic() {
-		return EstudioMapper.listEstudioToListPublicEstudioForm(getAllActivos());
+	public List<PublicoEstudioForm> getAllActivosPublic() {
+		return EstudioUtil.listEstudioToListPublicEstudioForm(getAllActivos());
 	}
 
 }

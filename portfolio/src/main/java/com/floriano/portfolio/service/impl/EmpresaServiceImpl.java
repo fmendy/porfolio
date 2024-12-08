@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.floriano.portfolio.model.Empresa;
 import com.floriano.portfolio.repository.EmpresaRepository;
-import com.floriano.portfolio.entity.Empresa;
 import com.floriano.portfolio.service.EmpresaService;
 
 @Service

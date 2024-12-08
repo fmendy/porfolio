@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.floriano.portfolio.entity.Municipio;
+import com.floriano.portfolio.model.Municipio;
 
 @Repository
 public interface MunicipioRepository extends CrudRepository<Municipio, Long> {
