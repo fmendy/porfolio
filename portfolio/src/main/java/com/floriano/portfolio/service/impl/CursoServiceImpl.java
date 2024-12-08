@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.floriano.portfolio.dao.CursoRepository;
+import com.floriano.portfolio.repository.CursoRepository;
 import com.floriano.portfolio.entity.Curso;
 import com.floriano.portfolio.form.publico.PublicCursoForm;
 import com.floriano.portfolio.service.CursoService;

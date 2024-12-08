@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.floriano.portfolio.dao.CertificacionRepository;
+import com.floriano.portfolio.repository.CertificacionRepository;
 import com.floriano.portfolio.entity.Certificacion;
 import com.floriano.portfolio.form.publico.PublicCertificacionForm;
 import com.floriano.portfolio.service.CertificacionService;

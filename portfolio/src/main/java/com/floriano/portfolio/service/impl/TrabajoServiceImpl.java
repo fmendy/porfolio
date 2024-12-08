@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.floriano.portfolio.dao.TrabajoRepository;
+import com.floriano.portfolio.repository.TrabajoRepository;
 import com.floriano.portfolio.entity.Trabajo;
 import com.floriano.portfolio.form.publico.PublicTrabajoForm;
 import com.floriano.portfolio.service.TrabajoService;

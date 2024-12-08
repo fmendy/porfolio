@@ -1,4 +1,4 @@
-package com.floriano.portfolio.dao;
+package com.floriano.portfolio.repository;
 
 import java.util.List;
 

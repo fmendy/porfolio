@@ -1,25 +1,21 @@
 package com.floriano.portfolio.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.floriano.portfolio.service.UsuarioService;
+import com.floriano.portfolio.util.Constantes;
 
 @Controller
 public class InicioController extends BaseController {
-	
-	@Autowired
-	private UsuarioService usuarioService;
 
-	@GetMapping(value = "/")
-	public String init(Model model) {
-		model.addAttribute("titulo", "Gómez Floriano");
-		usuarioService.getById(1L);
-		addBasicModelDetails(model);
-		addNavbarCurrentPage(model, "inicio");
-		return "inicio";
+	@GetMapping(value = "/inicio")
+	public ModelAndView init(Model model) {
+		ModelAndView mav = new ModelAndView("inicio");
+		mav.addObject(Constantes.TITLE_PAGE, "Gómez Floriano");
+		addBasicModelDetails(mav);
+		return mav;
 	}
-	
+
 }

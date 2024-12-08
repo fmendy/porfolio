@@ -31,4 +31,5 @@ public class Visita extends BaseEntity implements Serializable {
 
 	@Column(name = "ip", length = 255, nullable = false)
 	private String ip;
+
 }

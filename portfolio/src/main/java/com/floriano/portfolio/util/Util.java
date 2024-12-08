@@ -5,6 +5,7 @@ import java.time.format.TextStyle;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.TimeZone;
 
 import lombok.experimental.UtilityClass;
@@ -27,10 +28,14 @@ public class Util {
 	}
 
 	public String dateToAnno(Date date) {
-
 		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Madrid"));
 		cal.setTime(date);
 
 		return Integer.toString(cal.get(Calendar.YEAR));
+	}
+	
+	public String getMessage(String key) {
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("messages", Locale.getDefault());
+		return resourceBundle.getString(key);
 	}
 }

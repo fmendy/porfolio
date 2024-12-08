@@ -1,4 +1,4 @@
-package com.floriano.portfolio.dao;
+package com.floriano.portfolio.repository;
 
 import java.util.List;
 
@@ -13,4 +13,6 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 	List<Usuario> findByActivoTrue();
 
 	Usuario findByActivoTrueAndId(Long id);
+
+	Usuario findByActivoTrueAndNombreEqualsIgnoreCase(String nombre);
 }

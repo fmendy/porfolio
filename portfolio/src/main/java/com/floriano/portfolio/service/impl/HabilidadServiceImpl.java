@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.floriano.portfolio.dao.HabilidadRepository;
+import com.floriano.portfolio.repository.HabilidadRepository;
 import com.floriano.portfolio.entity.Habilidad;
 import com.floriano.portfolio.service.HabilidadService;
 
