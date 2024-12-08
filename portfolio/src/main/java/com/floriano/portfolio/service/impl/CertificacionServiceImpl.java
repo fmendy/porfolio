@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.floriano.portfolio.repository.CertificacionRepository;
 import com.floriano.portfolio.entity.Certificacion;
-import com.floriano.portfolio.form.publico.PublicCertificacionForm;
+import com.floriano.portfolio.model.publico.PublicCertificacionForm;
 import com.floriano.portfolio.service.CertificacionService;
 import com.floriano.portfolio.util.PublicCertificacionMapper;
 

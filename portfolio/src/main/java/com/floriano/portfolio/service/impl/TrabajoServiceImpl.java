@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.floriano.portfolio.repository.TrabajoRepository;
 import com.floriano.portfolio.entity.Trabajo;
-import com.floriano.portfolio.form.publico.PublicTrabajoForm;
+import com.floriano.portfolio.model.publico.PublicTrabajoForm;
 import com.floriano.portfolio.service.TrabajoService;
 import com.floriano.portfolio.util.PublicTrabajoMapper;
 

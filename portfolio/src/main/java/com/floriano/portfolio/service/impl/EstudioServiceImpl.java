@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.floriano.portfolio.repository.EstudioRepository;
 import com.floriano.portfolio.entity.Estudio;
-import com.floriano.portfolio.form.publico.PublicEstudioForm;
+import com.floriano.portfolio.model.publico.PublicEstudioForm;
 import com.floriano.portfolio.service.EstudioService;
 import com.floriano.portfolio.util.EstudioMapper;
 

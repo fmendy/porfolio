@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.floriano.portfolio.repository.UsuarioRepository;
 import com.floriano.portfolio.entity.Usuario;
-import com.floriano.portfolio.form.UserSessionForm;
+import com.floriano.portfolio.model.UserSessionForm;
 import com.floriano.portfolio.service.UsuarioService;
 
 @Service

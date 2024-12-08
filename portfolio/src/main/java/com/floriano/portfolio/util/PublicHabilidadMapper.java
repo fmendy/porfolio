@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.floriano.portfolio.entity.Habilidad;
-import com.floriano.portfolio.form.publico.PublicHabilidadForm;
+import com.floriano.portfolio.model.publico.PublicHabilidadForm;
 
 import lombok.experimental.UtilityClass;
 

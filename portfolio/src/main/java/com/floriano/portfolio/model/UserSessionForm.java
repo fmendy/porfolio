@@ -1,4 +1,4 @@
-package com.floriano.portfolio.form;
+package com.floriano.portfolio.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

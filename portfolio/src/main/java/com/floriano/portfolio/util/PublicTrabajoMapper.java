@@ -9,8 +9,8 @@ import com.floriano.portfolio.entity.Habilidad;
 import com.floriano.portfolio.entity.Trabajo;
 import com.floriano.portfolio.entity.TrabajoHabilidad;
 import com.floriano.portfolio.entity.TrabajoTarea;
-import com.floriano.portfolio.form.publico.PublicTrabajoForm;
-import com.floriano.portfolio.form.publico.PublicTrabajoTareaForm;
+import com.floriano.portfolio.model.publico.PublicTrabajoForm;
+import com.floriano.portfolio.model.publico.PublicTrabajoTareaForm;
 
 import lombok.experimental.UtilityClass;
 

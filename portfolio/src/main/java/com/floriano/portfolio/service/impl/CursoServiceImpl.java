@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.floriano.portfolio.repository.CursoRepository;
 import com.floriano.portfolio.entity.Curso;
-import com.floriano.portfolio.form.publico.PublicCursoForm;
+import com.floriano.portfolio.model.publico.PublicCursoForm;
 import com.floriano.portfolio.service.CursoService;
 import com.floriano.portfolio.util.PublicCursoMapper;
 

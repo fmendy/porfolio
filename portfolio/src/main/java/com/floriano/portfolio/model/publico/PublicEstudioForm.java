@@ -1,4 +1,4 @@
-package com.floriano.portfolio.form.publico;
+package com.floriano.portfolio.model.publico;
 
 import java.io.Serializable;
 import java.util.List;

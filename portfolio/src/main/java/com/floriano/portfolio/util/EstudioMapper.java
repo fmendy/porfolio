@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.floriano.portfolio.entity.Estudio;
-import com.floriano.portfolio.form.publico.PublicEstudioForm;
+import com.floriano.portfolio.model.publico.PublicEstudioForm;
 
 import lombok.experimental.UtilityClass;
 
