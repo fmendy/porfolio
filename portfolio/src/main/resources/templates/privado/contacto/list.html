@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="icon" type="image/x-icon" th:href="@{/img/favicon.png}">
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/custom.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet" />
@@ -20,7 +21,7 @@
 
 
 
-	<div th:replace="~{fragments/headerPrivado :: headerPrivado(contacto)}">...</div>
+	<div th:replace="~{fragments/header :: header(contactoprivado)}">...</div>
 
 	<div class="container-fluid">
 		<div class="row flex-nowrap">
@@ -49,22 +50,22 @@
 									th:field=*{asunto}>
 							</div>
 						</div>
-						
+
 						<div class="row">
 							<div class="col-sm-3">
 								<label for="mail" class="col-sm-8 col-form-label"
 									th:text="#{privado.contacto.buscar.fecha.desde}"><span>
-										: </span></label> <input type="date" class="form-control mb-3" id="fechaDesde"
-									th:field=*{fechaDesde}>
+										: </span></label> <input type="date" class="form-control mb-3"
+									id="fechaDesde" th:field=*{fechaDesde}>
 							</div>
-							
+
 							<div class="col-sm-3">
 								<label for="mail" class="col-sm-8 col-form-label"
 									th:text="#{privado.contacto.buscar.fecha.hasta}"><span>
-										: </span></label> <input type="date" class="form-control mb-3" id="fechaHasta"
-									th:field=*{fechaHasta}>
+										: </span></label> <input type="date" class="form-control mb-3"
+									id="fechaHasta" th:field=*{fechaHasta}>
 							</div>
-							
+
 						</div>
 						<br>
 						<div class="row">
@@ -107,14 +108,15 @@
 							<tr>
 								<th class="table-active" scope="col"><span
 									th:text="#{privado.contacto.tabla.fecha}"></span> <a
-									class="flecha-orden-tabla" th:href="${url}+'&sort=fechaCreacion,ASC'">
-										<i class="bi bi-arrow-down-short"></i>
+									class="flecha-orden-tabla"
+									th:href="${url}+'&sort=fechaCreacion,ASC'"> <i
+										class="bi bi-arrow-down-short"></i>
 								</a> <a class="flecha-orden-tabla"
 									th:href="${url}+'&sort=fechaCreacion,DESC'"> <i
 										class="bi bi-arrow-up-short"></i>
 								</a></th>
-							
-								
+
+
 								<th class="table-active" scope="col"><span
 									th:text="#{privado.contacto.tabla.mail}"></span> <a
 									class="flecha-orden-tabla" th:href="${url}+'&sort=mail,ASC'">
@@ -132,7 +134,7 @@
 									th:href="${url}+'&sort=asunto,DESC'"> <i
 										class="bi bi-arrow-up-short"></i>
 								</a></th>
-								
+
 								<th class="table-active" scope="col"><span
 									th:text="#{privado.contacto.tabla.leido}"></span> <a
 									class="flecha-orden-tabla" th:href="${url}+'&sort=leido,ASC'">
@@ -141,11 +143,12 @@
 									th:href="${url}+'&sort=leido,DESC'"> <i
 										class="bi bi-arrow-up-short"></i>
 								</a></th>
-								
+
 								<th class="table-active" scope="col"><span
 									th:text="#{privado.contacto.tabla.respondido}"></span> <a
-									class="flecha-orden-tabla" th:href="${url}+'&sort=respondido,ASC'">
-										<i class="bi bi-arrow-down-short"></i>
+									class="flecha-orden-tabla"
+									th:href="${url}+'&sort=respondido,ASC'"> <i
+										class="bi bi-arrow-down-short"></i>
 								</a> <a class="flecha-orden-tabla"
 									th:href="${url}+'&sort=respondido,DESC'"> <i
 										class="bi bi-arrow-up-short"></i>
@@ -161,7 +164,7 @@
 								<td th:text="${contacto.asunto}" />
 								<td th:text="${contacto.leido}" />
 								<td th:text="${contacto.respondido}" />
-								
+
 							</tr>
 
 						</tbody>
@@ -172,8 +175,8 @@
 	</div>
 
 
-
-
+	<div th:replace="~{fragments/footer :: footer}"></div>
+	<br>
 
 	<script>
 		$(document).ready(function() {

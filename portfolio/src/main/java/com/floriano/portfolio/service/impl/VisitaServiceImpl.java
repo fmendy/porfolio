@@ -20,6 +20,7 @@ public class VisitaServiceImpl implements VisitaService {
 			Visita visita = new Visita();
 			visita.setIp(ip);
 			visita.setUrl(url);
+			visita.setAgente(agente);
 			visitaRepository.save(visita);
 		}
 
