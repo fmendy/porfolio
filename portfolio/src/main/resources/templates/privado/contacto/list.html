@@ -49,6 +49,23 @@
 									th:field=*{asunto}>
 							</div>
 						</div>
+						
+						<div class="row">
+							<div class="col-sm-3">
+								<label for="mail" class="col-sm-8 col-form-label"
+									th:text="#{privado.contacto.buscar.fecha.desde}"><span>
+										: </span></label> <input type="date" class="form-control mb-3" id="fechaDesde"
+									th:field=*{fechaDesde}>
+							</div>
+							
+							<div class="col-sm-3">
+								<label for="mail" class="col-sm-8 col-form-label"
+									th:text="#{privado.contacto.buscar.fecha.hasta}"><span>
+										: </span></label> <input type="date" class="form-control mb-3" id="fechaHasta"
+									th:field=*{fechaHasta}>
+							</div>
+							
+						</div>
 						<br>
 						<div class="row">
 							<div class="btn-toolbar" role="toolbar"

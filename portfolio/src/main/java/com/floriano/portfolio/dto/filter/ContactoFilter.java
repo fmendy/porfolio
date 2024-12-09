@@ -3,6 +3,8 @@ package com.floriano.portfolio.dto.filter;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,8 +24,10 @@ public class ContactoFilter implements Serializable {
 
 	private Long respondido;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaDesde;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaHasta;
 
 }

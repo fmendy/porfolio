@@ -11,4 +11,6 @@ public class Constantes {
 	public static final String GUION_BAJO = "_";
 
 	public static final String GUION = "-";
+	
+	public static final String DATE_FORMAT_YYYY_MM_DD = "yyyy-MM-dd";
 }

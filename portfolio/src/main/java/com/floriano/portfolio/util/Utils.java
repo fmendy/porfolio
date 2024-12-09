@@ -1,5 +1,7 @@
 package com.floriano.portfolio.util;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.Calendar;
@@ -65,10 +67,12 @@ public class Utils {
 				retVal = retVal + "&asunto=" + filter.getAsunto();
 			}
 			if (filter.getFechaDesde() != null) {
-				retVal = retVal + "&fechaDesde=" + filter.getFechaDesde();
+				retVal = retVal + "&fechaDesde="
+						+ dateToString(filter.getFechaDesde(), Constantes.DATE_FORMAT_YYYY_MM_DD);
 			}
 			if (filter.getFechaHasta() != null) {
-				retVal = retVal + "&fechaHasta=" + filter.getFechaHasta();
+				retVal = retVal + "&fechaHasta="
+						+ dateToString(filter.getFechaHasta(), Constantes.DATE_FORMAT_YYYY_MM_DD);
 			}
 			if (filter.getLeido() != null) {
 				retVal = retVal + "&leido=" + filter.getLeido();
@@ -78,5 +82,20 @@ public class Utils {
 			}
 		}
 		return retVal;
+	}
+
+	public Date dateSetHoraMinutoSegundoMilisegundo(Date date, int hora, int min, int sec, int milisec) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		cal.set(Calendar.HOUR_OF_DAY, hora);
+		cal.set(Calendar.MINUTE, min);
+		cal.set(Calendar.SECOND, sec);
+		cal.set(Calendar.MILLISECOND, milisec);
+		return cal.getTime();
+	}
+
+	public String dateToString(Date date, String pattern) {
+		DateFormat df = new SimpleDateFormat(pattern);
+		return df.format(date);
 	}
 }

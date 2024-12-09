@@ -1,6 +1,7 @@
 package com.floriano.portfolio.dto.specifications;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.data.jpa.domain.Specification;
@@ -8,6 +9,7 @@ import org.springframework.util.StringUtils;
 
 import com.floriano.portfolio.dto.filter.ContactoFilter;
 import com.floriano.portfolio.model.Contacto;
+import com.floriano.portfolio.util.Utils;
 
 import jakarta.persistence.criteria.Predicate;
 
@@ -42,14 +44,15 @@ public class ContactoSpecifications {
 			}
 
 			if (filter.getFechaDesde() != null) {
+
 				Predicate predicate = criteriaBuilder.greaterThanOrEqualTo(root.get("fechaCreacion"),
-						filter.getFechaDesde());
+						Utils.dateSetHoraMinutoSegundoMilisegundo(filter.getFechaDesde(), 0, 0, 0, 0));
 				predicates.add(predicate);
 			}
 
 			if (filter.getFechaHasta() != null) {
 				Predicate predicate = criteriaBuilder.lessThanOrEqualTo(root.get("fechaCreacion"),
-						filter.getFechaHasta());
+						Utils.dateSetHoraMinutoSegundoMilisegundo(filter.getFechaHasta(), 23, 59, 59, 59));
 				predicates.add(predicate);
 			}
 			return criteriaBuilder.and(predicates.toArray((new Predicate[0])));
