@@ -14,7 +14,7 @@ public class VisitaServiceImpl implements VisitaService {
 	private VisitaRepository visitaRepository;
 
 	@Override
-	public void guardarVisita(String url, String ip) {
+	public void guardarVisita(String url, String ip, String agente) {
 
 		if (!url.contains("/js/") && !url.contains("/css/") && !url.contains("/img/")) {
 			Visita visita = new Visita();

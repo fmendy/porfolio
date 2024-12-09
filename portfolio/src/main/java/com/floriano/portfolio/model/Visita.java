@@ -34,6 +34,9 @@ public class Visita implements Serializable {
 	@Column(name = "url", length = 255, nullable = false)
 	private String url;
 
+	@Column(name = "agente", length = 455, nullable = false)
+	private String agente;
+
 	@Column(name = "ip", length = 255, nullable = false)
 	private String ip;
 

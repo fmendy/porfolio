@@ -713,7 +713,8 @@ values ((select id from estudio where nombre = 'Grado de Derecho'),'Estudios no 
 
 create table visita(
 	id INT  not null auto_increment primary key,
-    url varchar(255) not null ,
+    url varchar(255) not null,
+    agente varchar(455)  null,
     ip varchar(255) not null ,
     activo TINYINT(1) not null default(1) ,
     fecha_creacion datetime not null default now(),
