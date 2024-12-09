@@ -25,9 +25,13 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Usuario usuario = usuarioRepository.findByActivoTrueAndNombreEqualsIgnoreCase(username);
-		String role = usuarioRepository.getRolNombreByActivoTrueAndNombreEqualsIgnoreCase(username);
-		UserSessionForm retVal = new UserSessionForm(username, usuario.getPassword(), role, usuario.getId());
-		return retVal;
+		if (usuario != null) {
+			String role = usuarioRepository.getRolNombreByActivoTrueAndNombreEqualsIgnoreCase(username);
+
+			UserSessionForm retVal = new UserSessionForm(username, usuario.getPassword(), role, usuario.getId());
+			return retVal;
+		}
+		return null;
 	}
 
 }

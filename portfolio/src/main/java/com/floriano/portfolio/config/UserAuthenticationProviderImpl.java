@@ -19,8 +19,11 @@ public class UserAuthenticationProviderImpl implements AuthenticationProvider {
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		String username = authentication.getName();
 		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-		return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), userDetails.getPassword(),
-				userDetails.getAuthorities());
+		if (userDetails != null) {
+			return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), userDetails.getPassword(),
+					userDetails.getAuthorities());
+		}
+		return null;
 	}
 
 	@Override

@@ -25,10 +25,13 @@ public class WebSecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests((authorize) -> authorize
 				.requestMatchers("/login", "/resources/**", "/css/**", "/js/**", "/img/**", "/publico/**", "/trabajos",
-						"/certificaciones", "/estudios", "/cursos", "/inicio","/error", "/contacto","/contacto/guardar","/politicaprivacidad")
+						"/certificaciones", "/estudios", "/cursos", "/inicio", "/error", "/contacto",
+						"/contacto/guardar", "/politicaprivacidad", "/logout")
 				.permitAll().requestMatchers("/privado/**").hasAnyRole("ADMINISTRADOR").anyRequest().authenticated())
 				.formLogin(form -> form.loginPage("/login").permitAll().loginProcessingUrl("/login")
 						.defaultSuccessUrl("/privado/contacto", true));
+
+		http.logout((logout) -> logout.logoutSuccessUrl("/login").permitAll());
 
 		SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
 		// storing the session
@@ -36,13 +39,14 @@ public class WebSecurityConfig {
 
 		// session management
 		http.sessionManagement((session) -> {
-			session.maximumSessions(1).maxSessionsPreventsLogin(true);
+			session.maximumSessions(5).maxSessionsPreventsLogin(true);
 			session.sessionFixation(SessionManagementConfigurer.SessionFixationConfigurer::newSession);
 			session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
 		});
 
 		// auth provider for connect DAO
 		http.authenticationProvider(authenticationManager);
+
 		return http.build();
 	}
 

@@ -28,15 +28,25 @@
 					<li class="nav-item"><a class="nav-link"
 						th:style="${#strings.equals(activeLink, 'certificaciones')}? 'color:white' : ''"
 						href="/certificaciones" th:text="#{navbar.certificaciones}"></a></li>
-						<li class="nav-item"><a class="nav-link"
+					<li class="nav-item"><a class="nav-link"
 						th:style="${#strings.equals(activeLink, 'contacto')}? 'color:white' : ''"
 						href="/contacto" th:text="#{navbar.contacto}"></a></li>
 
 				</ul>
-				<ul  sec:authorize="hasRole('ADMINISTRADOR')" class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="/privado/contacto"
+				<ul sec:authorize="hasRole('ADMINISTRADOR')" class="navbar-nav">
+					<li class="nav-item"><a class="nav-link"
+						href="/privado/contacto"
 						th:style="${#strings.equals(activeLink, 'contactoprivado')}? 'color:white' : ''"
 						th:text="#{navbar.privado.ver.contacto}"></a></li>
+
+					<li class="nav-item">
+						<form th:action="@{/logout}" method="post" id="logoutForm">
+							<a href="#"
+								onclick="document.getElementById('logoutForm').submit()">
+								<i class="bi bi-door-closed" style="color: white;"></i>
+								</a>
+						</form>
+					</li>
 
 
 				</ul>
