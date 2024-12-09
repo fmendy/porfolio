@@ -87,25 +87,40 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="row">
 											<div class="form-floating">
-												<div class="form-floating mb-3">
-													<input type="checkbox"  th:field=*{politicaPrivacidad}
-														required="required" class="form-control" id="politicaPrivacidad">
-													<label for="politicaPrivacidad" th:text="#{contacto.he.leido.acepto.titulo}"
-														class="required-form-label"></label>
+
+												<div class="form-group form-check">
+													<input type="checkbox" th:field=*{politicaPrivacidad}
+														value="1" required="required" class="form-check-input"
+														onchange="changeButonContacto()"
+														id="politicaPrivacidad"> <label
+														class="form-check-label" for="politicaPrivacidad"
+														style="color: white"
+														th:text="#{contacto.he.leido.acepto.titulo}"></label> <label
+														class="form-check-label" for="politicaPrivacidad"
+														style="color: white; font-size: 10px"
+														th:text="#{contacto.he.leido.acepto.mensaje}"></label>
+													<a th:href="@{politicaprivacidad}" style="color: white; font-size: 10px"><label>
+														<span
+															th:text="#{contacto.politica.aqui}"></span> 
+													</label></a>
+
 													<div th:if="${#fields.hasErrors('politicaPrivacidad')}"
 														th:errorclass="error" id="validationPoliticaPrivacidad"
-														th:errors="*{politicaPrivacidad}" class="invalid-feedback d-block"></div>
+														th:errors="*{politicaPrivacidad}"
+														class="invalid-feedback d-block"></div>
 												</div>
 											</div>
 										</div>
 
+
+
 										<div class="row">
 											<div class="col-sm-4 form-floating">
 												<div class="form-floating">
-													<button type="submit" class="btn btn-success ">
+													<button id="btnContactoEnviar" type="submit" class="btn btn-success " disabled>
 														<i class="bi bi-send" style="color: white"></i> <span
 															th:text="#{boton.enviar}"></span>
 													</button>
@@ -142,7 +157,7 @@
 
 	<script>
 		$(document).ready(function() {
-
+			changeButonContacto()
 		});
 	</script>
 </body>
