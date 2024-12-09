@@ -311,3 +311,18 @@
 }
 
 
+.fondo-contacto-form{
+	background: rgba(0,0,0,0.5);
+	border-radius: 10px;
+}
+
+.required-form-label:before {
+    content:"*\00a0";
+    color:red;
+}
+
+.flecha-orden-tabla {
+	text-decoration: none;
+	color: black;
+}
+

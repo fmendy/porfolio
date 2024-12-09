@@ -33,7 +33,7 @@ public class Util {
 
 		return Integer.toString(cal.get(Calendar.YEAR));
 	}
-	
+
 	public String getMessage(String key) {
 		ResourceBundle resourceBundle = ResourceBundle.getBundle("messages", Locale.getDefault());
 		return resourceBundle.getString(key);

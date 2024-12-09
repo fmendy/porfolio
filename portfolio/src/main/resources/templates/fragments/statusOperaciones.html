@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div th:if="${httpStatus == 200}" class="alert alert-success"
+		role="alert" th:text="#{operacion.realizada.con.exito}"></div>
+		
+		<div th:if="${httpStatus == 500}" class="alert alert-danger"
+		role="alert" th:text="#{operacion.realizada.con.error}"></div>
+
+</body>
+</html>
