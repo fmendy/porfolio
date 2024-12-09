@@ -1,6 +1,11 @@
 package com.floriano.portfolio.model;
 
 import java.io.Serializable;
+import java.util.Date;
+
+import org.hibernate.annotations.ColumnDefault;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "visita")
-public class Visita extends BaseEntity implements Serializable {
+public class Visita implements Serializable {
 
 	private static final long serialVersionUID = -7080406867358141926L;
 
@@ -31,5 +36,17 @@ public class Visita extends BaseEntity implements Serializable {
 
 	@Column(name = "ip", length = 255, nullable = false)
 	private String ip;
+
+	@Column(name = "Activo", insertable = false)
+	@ColumnDefault("1")
+	private boolean activo;
+
+	@CreatedDate
+	@Column(name = "fecha_creacion", insertable = false, nullable = false, updatable = false)
+	private Date fechaCreacion;
+
+	@LastModifiedDate
+	@Column(name = "fecha_modificacion", insertable = false, nullable = false)
+	private Date fechaModificacion;
 
 }

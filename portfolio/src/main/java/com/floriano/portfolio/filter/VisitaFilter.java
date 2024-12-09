@@ -24,7 +24,7 @@ public class VisitaFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
-		visitaService.guardarVisita(req.getRequestURI(), req.getRemoteHost());
+		visitaService.guardarVisita(req.getRequestURL().toString(), req.getRemoteHost());
 		chain.doFilter(request, response);
 	}
 

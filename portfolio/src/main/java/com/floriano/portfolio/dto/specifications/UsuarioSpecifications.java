@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;
 
-import com.floriano.portfolio.filter.UsuarioFilter;
+import com.floriano.portfolio.dto.filter.UsuarioFilter;
 import com.floriano.portfolio.model.Usuario;
 
 import jakarta.persistence.criteria.Predicate;

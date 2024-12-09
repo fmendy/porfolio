@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.floriano.portfolio.filter.UsuarioFilter;
 import com.floriano.portfolio.service.RolService;
 import com.floriano.portfolio.service.UsuarioService;
 
