@@ -19,7 +19,7 @@ public class LoginController {
 	public ModelAndView login() {
 		ModelAndView mav = new ModelAndView("login");
 		LoginForm form = new LoginForm();
-		form.setUsername("Floriano");
+		form.setUsername("Admin");
 		form.setPassword("AS");
 		mav.addObject("form", form);
 		mav.addObject(Constantes.TITLE_PAGE, Utils.getMessage("title.page.iniciar.sesion"));

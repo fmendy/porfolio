@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.floriano.portfolio.controller.BaseController;
 import com.floriano.portfolio.dto.publico.PublicoContactoForm;
@@ -41,13 +42,13 @@ public class ContactoController extends BaseController {
 
 	@PostMapping("/guardar")
 	public ModelAndView guardar(@Valid @ModelAttribute("form") PublicoContactoForm form, BindingResult bindingResult,
-			HttpServletRequest request, HttpServletResponse response, RedirectAttributes attributes) {
+			HttpServletRequest request, HttpServletResponse response, RedirectAttributes redirectAttributes) {
 		ModelAndView mav = new ModelAndView(VIEW_PUBLICO_CONTACTO);
 		if (bindingResult.hasErrors()) {
 			defaultModelForm(mav, form);
 			return mav;
 		}
-		
+
 		try {
 			contactoService.enviarContacto(form);
 		} catch (Exception e) {
@@ -55,15 +56,17 @@ public class ContactoController extends BaseController {
 			defaultModelForm(mav, form);
 			return mav;
 		}
-		mav.addObject("httpStatus", HttpStatus.OK.value());
-		defaultModelForm(mav, new PublicoContactoForm());
 
+		RedirectView rv = new RedirectView(VIEW_PUBLICO_CONTACTO);
+		mav = new ModelAndView(rv);
+		redirectAttributes.addFlashAttribute("httpStatus", HttpStatus.OK.value());
+		defaultModelForm(mav, new PublicoContactoForm());
 		return mav;
 	}
 
 	private void defaultModelForm(ModelAndView mav, PublicoContactoForm form) {
 		mav.addObject("form", form);
-		mav.addObject(Constantes.TITLE_PAGE, Utils.getMessage("title.page.gomez.floriano.jorge") + " " + Constantes.GUION
-				+ " " + Utils.getMessage("title.page.contacto"));
+		mav.addObject(Constantes.TITLE_PAGE, Utils.getMessage("title.page.gomez.floriano.jorge") + " "
+				+ Constantes.GUION + " " + Utils.getMessage("title.page.contacto"));
 	}
 }

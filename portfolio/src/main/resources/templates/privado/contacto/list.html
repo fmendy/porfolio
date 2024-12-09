@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="${titlePage}"></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/custom.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="/js/jquery-3.7.1.min.js"></script>
+<script src="/js/funciones.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+
+
+	<div th:replace="~{fragments/headerPrivado :: headerPrivado(contacto)}">...</div>
+
+	<div class="container-fluid">
+		<div class="row flex-nowrap">
+
+
+
+			<div class="col py-3">
+
+
+				<form id="formSearchContacto" action="#"
+					th:action="@{/privado/contacto/buscar}" th:object="${filter}"
+					method="get">
+					<div class="container">
+
+						<div class="row">
+							<div class="col-sm-3">
+								<label for="mail" class="col-sm-8 col-form-label"
+									th:text="#{privado.contacto.buscar.mail}"><span>
+										: </span></label> <input type="text" class="form-control mb-3" id="mail"
+									th:field=*{mail}>
+							</div>
+							<div class="col-sm-3">
+								<label for="asunto" class="col-sm-8 col-form-label"
+									th:text="#{privado.contacto.buscar.asunto}"><span>
+										: </span></label> <input type="text" class="form-control mb-3" id="asunto"
+									th:field=*{asunto}>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="btn-toolbar" role="toolbar"
+								aria-label="Toolbar with button groups">
+								<div class="btn-group col-sm-3" role="group"
+									aria-label="First group">
+									<button type="submit" class="btn btn-success col-sm-1">
+										<i class="bi bi-search" style="color: white"></i> <span
+											th:text="#{boton.buscar}"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+				<br>
+				<div class="container">
+					<div th:if="${page.totalPages > 0}">
+						<span th:text="#{tabla.resultados.encontrados}"></span> <span
+							th:text="${page.totalElements}"></span>
+						<nav aria-label="Page navigation example">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link"
+									th:text="#{tabla.primera}" th:href="${url}+'&page=0'+${sort}"></a></li>
+								<li
+									th:each="i: ${#numbers.sequence(page.getNumber()-2, page.getNumber()+2)}"
+									th:class="${page.getNumber != i} ?'page-item': 'page-item active'"><a
+									class="page-link" th:if="${i>=0 && i< page.totalPages}"
+									th:href=" ${url}+'&page='+${i}+${sort}" th:text="${i+1}"></a></li>
+								<li class="page-item"><a class="page-link"
+									th:text="#{tabla.ultima}"
+									th:href=" ${url}+'&page='+${page.totalPages-1}+${sort}"></a></li>
+							</ul>
+						</nav>
+
+					</div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th class="table-active" scope="col"><span
+									th:text="#{privado.contacto.tabla.fecha}"></span> <a
+									class="flecha-orden-tabla" th:href="${url}+'&sort=fechaCreacion,ASC'">
+										<i class="bi bi-arrow-down-short"></i>
+								</a> <a class="flecha-orden-tabla"
+									th:href="${url}+'&sort=fechaCreacion,DESC'"> <i
+										class="bi bi-arrow-up-short"></i>
+								</a></th>
+							
+								
+								<th class="table-active" scope="col"><span
+									th:text="#{privado.contacto.tabla.mail}"></span> <a
+									class="flecha-orden-tabla" th:href="${url}+'&sort=mail,ASC'">
+										<i class="bi bi-arrow-down-short"></i>
+								</a> <a class="flecha-orden-tabla"
+									th:href="${url}+'&sort=mail,DESC'"> <i
+										class="bi bi-arrow-up-short"></i>
+								</a></th>
+
+								<th class="table-active" scope="col"><span
+									th:text="#{privado.contacto.tabla.asunto}"></span> <a
+									class="flecha-orden-tabla" th:href="${url}+'&sort=asunto,ASC'">
+										<i class="bi bi-arrow-down-short"></i>
+								</a> <a class="flecha-orden-tabla"
+									th:href="${url}+'&sort=asunto,DESC'"> <i
+										class="bi bi-arrow-up-short"></i>
+								</a></th>
+								
+								<th class="table-active" scope="col"><span
+									th:text="#{privado.contacto.tabla.leido}"></span> <a
+									class="flecha-orden-tabla" th:href="${url}+'&sort=leido,ASC'">
+										<i class="bi bi-arrow-down-short"></i>
+								</a> <a class="flecha-orden-tabla"
+									th:href="${url}+'&sort=leido,DESC'"> <i
+										class="bi bi-arrow-up-short"></i>
+								</a></th>
+								
+								<th class="table-active" scope="col"><span
+									th:text="#{privado.contacto.tabla.respondido}"></span> <a
+									class="flecha-orden-tabla" th:href="${url}+'&sort=respondido,ASC'">
+										<i class="bi bi-arrow-down-short"></i>
+								</a> <a class="flecha-orden-tabla"
+									th:href="${url}+'&sort=respondido,DESC'"> <i
+										class="bi bi-arrow-up-short"></i>
+								</a></th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="contacto, iStat : ${page.content}"
+								th:class="${iStat.odd}? 'table-info'">
+								<td th:text="${contacto.fecha}" />
+								<td th:text="${contacto.mail}" />
+								<td th:text="${contacto.asunto}" />
+								<td th:text="${contacto.leido}" />
+								<td th:text="${contacto.respondido}" />
+								
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<script>
+		$(document).ready(function() {
+
+		});
+	</script>
+</body>
+</html>

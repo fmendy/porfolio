@@ -28,7 +28,7 @@ public class WebSecurityConfig {
 						"/certificaciones", "/estudios", "/cursos", "/inicio","/error", "/contacto","/contacto/guardar","/politicaprivacidad")
 				.permitAll().requestMatchers("/privado/**").hasAnyRole("ADMINISTRADOR").anyRequest().authenticated())
 				.formLogin(form -> form.loginPage("/login").permitAll().loginProcessingUrl("/login")
-						.defaultSuccessUrl("/privado/miperfil", true));
+						.defaultSuccessUrl("/privado/contacto", true));
 
 		SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
 		// storing the session
