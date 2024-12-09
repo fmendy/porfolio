@@ -19,10 +19,10 @@ public class EstudioUtil {
 		retVal.setNombre(estudio.getNombre());
 		retVal.setListEstudioObservacion(EstudioObservacionUtil
 				.listEstudioObservacionToListPublicEstudioObservacionForm(estudio.getListEstudioObservacion()));
-		retVal.setFechaFin(Util.dateToMesAnnoString(estudio.getFechaFin()));
-		retVal.setFechaInicio(Util.dateToMesAnnoString(estudio.getFechaInicio()));
-		retVal.setAnoFin(Util.dateToAnno(estudio.getFechaFin()));
-		retVal.setAnoInicio(Util.dateToAnno(estudio.getFechaInicio()));
+		retVal.setFechaFin(Utils.dateToMesAnnoString(estudio.getFechaFin()));
+		retVal.setFechaInicio(Utils.dateToMesAnnoString(estudio.getFechaInicio()));
+		retVal.setAnoFin(Utils.dateToAnno(estudio.getFechaFin()));
+		retVal.setAnoInicio(Utils.dateToAnno(estudio.getFechaInicio()));
 		return retVal;
 	}
 

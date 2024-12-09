@@ -40,4 +40,8 @@ public class Contacto extends BaseEntity implements Serializable {
 	@Column(name = "leido", insertable = false)
 	@ColumnDefault("0")
 	private boolean leido;
+	
+	@Column(name = "respondido", insertable = false)
+	@ColumnDefault("0")
+	private boolean respondido;
 }

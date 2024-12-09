@@ -15,7 +15,7 @@ import com.floriano.portfolio.controller.BaseController;
 import com.floriano.portfolio.dto.publico.PublicoContactoForm;
 import com.floriano.portfolio.service.ContactoService;
 import com.floriano.portfolio.util.Constantes;
-import com.floriano.portfolio.util.Util;
+import com.floriano.portfolio.util.Utils;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -63,7 +63,7 @@ public class ContactoController extends BaseController {
 
 	private void defaultModelForm(ModelAndView mav, PublicoContactoForm form) {
 		mav.addObject("form", form);
-		mav.addObject(Constantes.TITLE_PAGE, Util.getMessage("title.page.gomez.floriano.jorge") + " " + Constantes.GUION
-				+ " " + Util.getMessage("title.page.contacto"));
+		mav.addObject(Constantes.TITLE_PAGE, Utils.getMessage("title.page.gomez.floriano.jorge") + " " + Constantes.GUION
+				+ " " + Utils.getMessage("title.page.contacto"));
 	}
 }

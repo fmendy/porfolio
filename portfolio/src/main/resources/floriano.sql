@@ -720,7 +720,21 @@ create table visita(
     fecha_modificacion datetime not null default now()
 );
 
-select * from visita;
+create table contacto(
+	id INT  not null auto_increment primary key,
+    mail varchar(255) not null ,
+	titulo varchar(255) not null ,
+	asunto varchar(2400) not null ,
+	leido TINYINT(1) not null default(0) ,
+	respondido TINYINT(1) not null default(0) ,
+    activo TINYINT(1) not null default(1) ,
+    id_usuario_creacion int  ,
+    id_usuario_modificacion int  ,
+    fecha_creacion datetime not null default now(),
+    fecha_modificacion datetime not null default now()
+);
 
+alter table contacto add foreign key fk_contacto_usuario_creacion (id_usuario_creacion) references usuario(id);
+alter table contacto add foreign key fk_contacto_usuario_modificacion (id_usuario_modificacion) references usuario(id);
 
 

@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.floriano.portfolio.controller.BaseController;
 import com.floriano.portfolio.util.Constantes;
-import com.floriano.portfolio.util.Util;
+import com.floriano.portfolio.util.Utils;
 
 @Controller
 @RequestMapping(value = "/politicaprivacidad")
@@ -16,8 +16,8 @@ public class PoliticaPrivacidadController extends BaseController {
 	@GetMapping(value = "")
 	public ModelAndView indexTrabajo() {
 		ModelAndView mav = new ModelAndView("publico/politicaprivacidad");
-		mav.addObject(Constantes.TITLE_PAGE, Util.getMessage("title.page.gomez.floriano.jorge") + " " + Constantes.GUION
-				+ " " + Util.getMessage("title.page.politica.privacidad"));
+		mav.addObject(Constantes.TITLE_PAGE, Utils.getMessage("title.page.gomez.floriano.jorge") + " " + Constantes.GUION
+				+ " " + Utils.getMessage("title.page.politica.privacidad"));
 		addBasicModelDetails(mav);
 		return mav;
 	}

@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.floriano.portfolio.controller.BaseController;
 import com.floriano.portfolio.service.EstudioService;
 import com.floriano.portfolio.util.Constantes;
-import com.floriano.portfolio.util.Util;
+import com.floriano.portfolio.util.Utils;
 
 @Controller
 @RequestMapping(value = "/estudios")
@@ -21,7 +21,7 @@ public class EstudiosController extends BaseController {
 	@GetMapping(value = "")
 	public ModelAndView indexEstudios() {
 		ModelAndView mav = new ModelAndView("publico/estudios");
-		mav.addObject(Constantes.TITLE_PAGE, Util.getMessage("title.page.gomez.floriano.jorge")+" "+Constantes.GUION +" "+Util.getMessage("title.page.estudios"));
+		mav.addObject(Constantes.TITLE_PAGE, Utils.getMessage("title.page.gomez.floriano.jorge")+" "+Constantes.GUION +" "+Utils.getMessage("title.page.estudios"));
 		mav.addObject("listEstudios", estudioService.getAllActivosPublic());
 		addBasicModelDetails(mav);
 		return mav;
