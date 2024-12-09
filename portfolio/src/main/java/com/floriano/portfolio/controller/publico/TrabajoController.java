@@ -1,4 +1,4 @@
-package com.floriano.portfolio.controller;
+package com.floriano.portfolio.controller.publico;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.floriano.portfolio.controller.BaseController;
 import com.floriano.portfolio.service.TrabajoService;
 import com.floriano.portfolio.util.Constantes;
+import com.floriano.portfolio.util.Util;
 
 @Controller
-@RequestMapping(value = "/experiencia")
+@RequestMapping(value = "/trabajos")
 public class TrabajoController extends BaseController {
 
 	@Autowired
@@ -18,8 +20,9 @@ public class TrabajoController extends BaseController {
 
 	@GetMapping(value = "")
 	public ModelAndView indexTrabajo() {
-		ModelAndView mav = new ModelAndView("trabajos");
-		mav.addObject(Constantes.TITLE_PAGE, "Gómez Floriano, Jorge - Experiencia");
+		ModelAndView mav = new ModelAndView("publico/trabajos");
+		mav.addObject(Constantes.TITLE_PAGE, Util.getMessage("title.page.gomez.floriano.jorge") + " " + Constantes.GUION
+				+ " " + Util.getMessage("title.page.experiencia.laboral"));
 		mav.addObject("listTrabajos", trabajoService.getPublicTrabajos());
 		addBasicModelDetails(mav);
 		return mav;

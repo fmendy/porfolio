@@ -24,8 +24,8 @@ public class WebSecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests((authorize) -> authorize
-				.requestMatchers("/login", "/resources/**", "/css/**", "/js/**", "/img/**", "/publico/**",
-						"/certificaciones", "/experiencia", "/estudios", "/cursos", "/inicio")
+				.requestMatchers("/login", "/resources/**", "/css/**", "/js/**", "/img/**", "/publico/**", "/trabajos",
+						"/certificaciones", "/estudios", "/cursos", "/inicio")
 				.permitAll().requestMatchers("/privado/**").hasAnyRole("ADMINISTRADOR").anyRequest().authenticated())
 				.formLogin(form -> form.loginPage("/login").permitAll().loginProcessingUrl("/login")
 						.defaultSuccessUrl("/privado/miperfil", true));

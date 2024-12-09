@@ -1,19 +1,20 @@
-package com.floriano.portfolio.controller;
-
+package com.floriano.portfolio.controller.publico;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.floriano.portfolio.controller.BaseController;
 import com.floriano.portfolio.util.Constantes;
+import com.floriano.portfolio.util.Util;
 
 @Controller
 public class InicioController extends BaseController {
 
 	@GetMapping(value = "/inicio")
 	public ModelAndView init(Model model) {
-		ModelAndView mav = new ModelAndView("inicio");
-		mav.addObject(Constantes.TITLE_PAGE, "Gómez Floriano");
+		ModelAndView mav = new ModelAndView("publico/inicio");
+		mav.addObject(Constantes.TITLE_PAGE, Util.getMessage("title.page.gomez.floriano.jorge")+" "+Constantes.GUION +" "+Util.getMessage("title.page.inicio"));
 		addBasicModelDetails(mav);
 		return mav;
 	}

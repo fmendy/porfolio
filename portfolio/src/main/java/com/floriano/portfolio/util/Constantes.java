@@ -9,4 +9,6 @@ public class Constantes {
 	public static final String ROLE = "ROLE";
 
 	public static final String GUION_BAJO = "_";
+
+	public static final String GUION = "-";
 }
